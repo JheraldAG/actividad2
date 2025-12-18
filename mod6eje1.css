@@ -1,142 +1,111 @@
-/* ===============================
-   HERO SECTION
-   =============================== */
-.hero-section {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+/* ======== GENERAL ======== */
+body {
+    background-color: #0f172a; /* azul oscuro casi negro */
+    color: #e5e7eb;
 }
 
-/* Altura hero */
+/* ======== HERO ======== */
+.hero-section {
+    background: linear-gradient(135deg, #020617 0%, #1e293b 50%, #312e81 100%);
+}
+
 .min-vh-75 {
     min-height: 75vh;
 }
 
-/* ===============================
-   NAVBAR
-   =============================== */
-.navbar {
-    background-color: #0b1c24 !important;
+/* ======== SECCIONES OSCURAS ======== */
+.section-dark {
+    background-color: #020617;
+    color: #e5e7eb;
 }
 
-.navbar-brand,
-.navbar-nav .nav-link {
-    color: #e6faff !important;
+/* ======== TITULOS ======== */
+h1, h2, h3, h4, h5 {
+    color: #f8fafc;
 }
 
-.navbar-nav .nav-link:hover {
-    color: #ff7a7a !important;
-}
-
-/* ===============================
-   SECCIONES
-   =============================== */
-section {
-    background-color: #0e1f28;
-    color: #e6faff;
-}
-
-section.bg-light {
-    background-color: #122b36 !important;
-}
-
-/* Títulos */
-h1, h2, h3, h5 {
-    color: #ffffff;
-}
-
-/* ===============================
-   CARDS
-   =============================== */
+/* ======== CARDS ======== */
 .card {
-    background: #142f3c;
-    color: #e6faff;
-    border-radius: 14px;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    background-color: #020617;
+    color: #e5e7eb;
+    border: 1px solid #1e293b;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
 .card-title {
-    color: #ffffff;
+    color: #f1f5f9;
 }
 
 .card-text {
-    color: #cdeaf0;
+    color: #cbd5f5;
 }
 
-/* Iconos */
-.card i {
-    color: #4dd0e1 !important;
+/* ======== ICONOS ======== */
+.bi {
+    color: #818cf8 !important;
 }
 
-/* ===============================
-   BADGES
-   =============================== */
+/* ======== BADGES ======== */
 .badge.bg-primary {
-    background-color: #4dd0e1 !important;
+    background-color: #4f46e5 !important;
 }
-
 .badge.bg-success {
-    background-color: #4ade80 !important;
+    background-color: #16a34a !important;
 }
-
 .badge.bg-danger {
-    background-color: #ff7a7a !important;
+    background-color: #dc2626 !important;
 }
 
-/* ===============================
-   BOTONES
-   =============================== */
+/* ======== BOTONES ======== */
 .btn-primary {
-    background: linear-gradient(135deg, #ff7a7a, #ff5252);
-    border: none;
+    background-color: #4f46e5;
+    border-color: #4f46e5;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #ff5252, #ff1744);
+    background-color: #4338ca;
+    border-color: #4338ca;
 }
 
 .btn-outline-primary {
-    color: #4dd0e1;
-    border-color: #4dd0e1;
+    color: #818cf8;
+    border-color: #818cf8;
 }
 
 .btn-outline-primary:hover {
-    background-color: #4dd0e1;
-    color: #003844;
+    background-color: #818cf8;
+    color: #020617;
 }
 
-/* ===============================
-   FORMULARIOS
-   =============================== */
+/* ======== FORMULARIOS ======== */
 .form-control {
-    background-color: #0f2630;
-    border: 1px solid #2c5364;
-    color: #e6faff;
+    background-color: #020617;
+    color: #e5e7eb;
+    border: 1px solid #1e293b;
 }
 
 .form-control:focus {
-    background-color: #0f2630;
-    border-color: #4dd0e1;
-    box-shadow: 0 0 0 0.2rem rgba(77, 208, 225, 0.25);
-    color: #ffffff;
+    background-color: #020617;
+    color: #f8fafc;
+    border-color: #818cf8;
+    box-shadow: none;
 }
 
-/* ===============================
-   FOOTER
-   =============================== */
+/* ======== FOOTER ======== */
 footer {
-    background-color: #08161d !important;
+    background-color: #020617 !important;
 }
 
 footer a {
-    color: #e6faff;
-    transition: opacity 0.3s, color 0.3s;
+    color: #c7d2fe;
+    transition: opacity 0.3s;
 }
 
 footer a:hover {
-    opacity: 0.8;
-    color: #ff7a7a;
+    opacity: 0.7;
 }
