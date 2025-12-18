@@ -3,173 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Tailwind CSS</title>
+    <title>Dashboard Dark</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
-    <!-- Navbar -->
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <span class="text-2xl font-bold text-indigo-600">DashPro</span>
-                </div>
-                <div class="flex items-center gap-4">
-                    <button class="p-2 rounded-lg hover:bg-gray-100">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                        </svg>
-                    </button>
-                    <img src="data:image/jpeg;base64,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" alt="User" class="w-10 h-10 rounded-full">
-                </div>
+
+<body class="bg-gray-900 text-gray-200">
+
+<!-- Navbar -->
+<nav class="bg-gray-800 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <span class="text-2xl font-bold text-indigo-400">DashPro</span>
+            <div class="flex items-center gap-4">
+                <button class="p-2 rounded-lg hover:bg-gray-700">
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 17h5l-1.4-1.4A2 2 0 0118 14V11a6 6 0 00-4-5.7V5a2 2 0 10-4 0v.3A6 6 0 006 11v3a2 2 0 01-.6 1.4L4 17h5m6 0v1a3 3 0 11-6 0v-1" />
+                    </svg>
+                </button>
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/..." class="w-10 h-10 rounded-full">
             </div>
         </div>
-    </nav>
-
-    <div class="flex">
-        <!-- Sidebar -->
-        <aside class="w-64 bg-white min-h-screen shadow-lg">
-            <nav class="mt-8">
-                <a href="#" class="flex items-center px-6 py-3 text-gray-700 bg-indigo-100 border-r-4 border-indigo-600">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                    </svg>
-                    <span class="ml-3 font-medium">Dashboard</span>
-                </a>
-                <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                    </svg>
-                    <span class="ml-3">Usuarios</span>
-                </a>
-                <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                    </svg>
-                    <span class="ml-3">Analíticas</span>
-                </a>
-                <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    </svg>
-                    <span class="ml-3">Configuración</span>
-                </a>
-            </nav>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="flex-1 p-8">
-            <h1 class="text-3xl font-bold text-gray-800 mb-8">Dashboard</h1>
-
-            <!-- Stats Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Total Usuarios</p>
-                            <p class="text-3xl font-bold text-gray-800">2,543</p>
-                            <p class="text-green-500 text-sm mt-2">↑ 12.5%</p>
-                        </div>
-                        <div class="bg-blue-100 p-3 rounded-full">
-                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Ingresos</p>
-                            <p class="text-3xl font-bold text-gray-800">$45,678</p>
-                            <p class="text-green-500 text-sm mt-2">↑ 8.2%</p>
-                        </div>
-                        <div class="bg-green-100 p-3 rounded-full">
-                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Pedidos</p>
-                            <p class="text-3xl font-bold text-gray-800">1,234</p>
-                            <p class="text-red-500 text-sm mt-2">↓ 3.1%</p>
-                        </div>
-                        <div class="bg-orange-100 p-3 rounded-full">
-                            <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Satisfacción</p>
-                            <p class="text-3xl font-bold text-gray-800">4.8</p>
-                            <p class="text-green-500 text-sm mt-2">↑ 0.3</p>
-                        </div>
-                        <div class="bg-purple-100 p-3 rounded-full">
-                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Recent Orders Table -->
-            <div class="bg-white rounded-lg shadow overflow-hidden">
-                <div class="px-6 py-4 border-b border-gray-200">
-                    <h2 class="text-xl font-semibold text-gray-800">Pedidos Recientes</h2>
-                </div>
-                <table class="w-full">
-                    <thead class="bg-gray-50">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Cliente</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Producto</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Fecha</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Monto</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-6 py-4 text-sm text-gray-900">#1234</td>
-                            <td class="px-6 py-4 text-sm text-gray-900">Juan Pérez</td>
-                            <td class="px-6 py-4 text-sm text-gray-900">Laptop Pro</td>
-                            <td class="px-6 py-4 text-sm text-gray-500">2024-01-15</td>
-                            <td class="px-6 py-4 text-sm text-gray-900">$1,299</td>
-                            <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">Completado</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-6 py-4 text-sm text-gray-900">#1235</td>
-                            <td class="px-6 py-4 text-sm text-gray-900">María García</td>
-                            <td class="px-6 py-4 text-sm text-gray-900">Mouse Wireless</td>
-                            <td class="px-6 py-4 text-sm text-gray-500">2024-01-15</td>
-                            <td class="px-6 py-4 text-sm text-gray-900">$49</td>
-                            <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-semibold text-yellow-800 bg-yellow-100 rounded-full">Pendiente</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-6 py-4 text-sm text-gray-900">#1236</td>
-                            <td class="px-6 py-4 text-sm text-gray-900">Carlos López</td>
-                            <td class="px-6 py-4 text-sm text-gray-900">Teclado Mecánico</td>
-                            <td class="px-6 py-4 text-sm text-gray-500">2024-01-14</td>
-                            <td class="px-6 py-4 text-sm text-gray-900">$129</td>
-                            <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-semibold text-blue-800 bg-blue-100 rounded-full">Procesando</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </main>
     </div>
+</nav>
+
+<div class="flex">
+
+<!-- Sidebar -->
+<aside class="w-64 bg-gray-800 min-h-screen">
+    <nav class="mt-8">
+        <a class="flex items-center px-6 py-3 bg-gray-700 text-indigo-400 border-r-4 border-indigo-500">
+            <span class="ml-3 font-medium">Dashboard</span>
+        </a>
+        <a class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-700">Usuarios</a>
+        <a class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-700">Analíticas</a>
+        <a class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-700">Configuración</a>
+    </nav>
+</aside>
+
+<!-- Main -->
+<main class="flex-1 p-8">
+    <h1 class="text-3xl font-bold mb-8">Dashboard</h1>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="bg-gray-800 rounded-lg p-6 shadow">
+            <p class="text-gray-400 text-sm">Total Usuarios</p>
+            <p class="text-3xl font-bold">2,543</p>
+            <p class="text-green-400 text-sm mt-2">↑ 12.5%</p>
+        </div>
+        <div class="bg-gray-800 rounded-lg p-6 shadow">
+            <p class="text-gray-400 text-sm">Ingresos</p>
+            <p class="text-3xl font-bold">$45,678</p>
+            <p class="text-green-400 text-sm mt-2">↑ 8.2%</p>
+        </div>
+        <div class="bg-gray-800 rounded-lg p-6 shadow">
+            <p class="text-gray-400 text-sm">Pedidos</p>
+            <p class="text-3xl font-bold">1,234</p>
+            <p class="text-red-400 text-sm mt-2">↓ 3.1%</p>
+        </div>
+        <div class="bg-gray-800 rounded-lg p-6 shadow">
+            <p class="text-gray-400 text-sm">Satisfacción</p>
+            <p class="text-3xl font-bold">4.8</p>
+            <p class="text-green-400 text-sm mt-2">↑ 0.3</p>
+        </div>
+    </div>
+
+    <!-- Tabla -->
+    <div class="bg-gray-800 rounded-lg shadow overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-700">
+            <h2 class="text-xl font-semibold">Pedidos Recientes</h2>
+        </div>
+        <table class="w-full text-sm">
+            <thead class="bg-gray-700 text-gray-300">
+                <tr>
+                    <th class="px-6 py-3 text-left">ID</th>
+                    <th class="px-6 py-3 text-left">Cliente</th>
+                    <th class="px-6 py-3 text-left">Producto</th>
+                    <th class="px-6 py-3 text-left">Fecha</th>
+                    <th class="px-6 py-3 text-left">Monto</th>
+                    <th class="px-6 py-3 text-left">Estado</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-700">
+                <tr class="hover:bg-gray-700">
+                    <td class="px-6 py-4">#1234</td>
+                    <td class="px-6 py-4">Juan Pérez</td>
+                    <td class="px-6 py-4">Laptop Pro</td>
+                    <td class="px-6 py-4 text-gray-400">2024-01-15</td>
+                    <td class="px-6 py-4">$1,299</td>
+                    <td class="px-6 py-4">
+                        <span class="px-2 py-1 text-xs bg-green-600/20 text-green-400 rounded">Completado</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+</div>
+
 </body>
 </html>
