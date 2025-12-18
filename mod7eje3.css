@@ -6,9 +6,10 @@
 }
 
 body {
-    background-color: #f0f2f5;
+    background-color: #0f172a; /* azul oscuro */
     font-family: sans-serif;
     padding: 20px;
+    color: #e5e7eb; /* texto claro */
 }
 
 /* =======================================================
@@ -16,87 +17,97 @@ body {
    ======================================================= */
 .gallery-grid {
     display: grid;
-    
-    /* 1. COLUMNAS AUTOMÁTICAS (Responsivo real)
-       - repeat(auto-fill, ...): "Crea tantas columnas como quepan en la pantalla".
-       - minmax(240px, 1fr): "Cada columna debe medir AL MENOS 240px. 
-         Si sobra espacio, estírate (1fr) para llenarlo".
-       Esto evita que tengas que usar @media queries para móviles. */
+
+    /* Columnas responsivas */
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 
-    /* 2. FILAS PEQUEÑAS (La clave del Masonry)
-       Creamos filas invisibles de 10px de alto. Esto nos da "resolución"
-       para decidir qué tan alta es cada tarjeta con precisión. */
+    /* Filas base para efecto masonry */
     grid-auto-rows: 10px;
 
-    /* 3. ALGORITMO INTELIGENTE (Dense)
-       Esto es lo que pedía la misión. Sin esto, si hay un hueco pequeño 
-       y sigue una tarjeta grande, queda un espacio vacío.
-       'dense' le dice al navegador: "Busca tarjetas pequeñas que vengan después 
-       y rellena los huecos vacíos de arriba". */
+    /* Relleno inteligente */
     grid-auto-flow: dense;
 
-    gap: 15px; /* Espacio entre tarjetas */
+    gap: 15px;
 }
 
 /* =======================================================
-   LAS TARJETAS (Piezas del Tetris)
+   LAS TARJETAS
    ======================================================= */
 .card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden; /* Corta la imagen si se sale de las esquinas redondeadas */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    
-    /* Grid Spans: Por defecto, una tarjeta normal ocupa 26 filas de 10px 
-       (260px aprox de altura total + gaps) */
-    grid-row: span 26; 
+    background: #1e293b; /* tarjeta oscura */
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
 
-    /* Usamos Flexbox dentro para que la imagen ocupe lo que pueda */
+    grid-row: span 26;
+
     display: flex;
     flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover sutil */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.6);
 }
 
 /* VARIANTE: Tarjeta Alta */
 .card-tall {
-    grid-row: span 42; /* Ocupa 42 filas (más alta) */
+    grid-row: span 42;
 }
 
 /* VARIANTE: Tarjeta Ancha */
 .card-wide {
-    grid-column: span 2; /* Ocupa 2 columnas a lo ancho */
+    grid-column: span 2;
     grid-row: span 26;
 }
 
-/* VARIANTE: Tarjeta Grande (Alta y Ancha) */
+/* VARIANTE: Tarjeta Grande */
 .card-big {
     grid-column: span 2;
     grid-row: span 42;
 }
 
 /* =======================================================
-   LAS IMÁGENES (Solución al problema visual)
+   IMÁGENES
    ======================================================= */
 figure {
     margin: 0;
-    /* 'flex-grow: 1' obliga a la imagen a ocupar todo el espacio 
-       disponible en la tarjeta, empujando el texto hacia abajo */
-    flex-grow: 1; 
-    height: 100%; /* Asegura que tenga altura */
+    flex-grow: 1;
+    height: 100%;
 }
 
 img {
     width: 100%;
     height: 100%;
-    
-    /* PROPIEDAD CLAVE: object-fit
-       - 'cover': Hace que la imagen actúe como un fondo. 
-       Se recorta si es necesario, pero NUNCA se deforma/estira.
-       Sin esto, tus imágenes se verían aplastadas. */
     object-fit: cover;
-    display: block; /* Elimina un pequeño espacio blanco fantasma debajo de las img */
+    display: block;
 }
 
+/* =======================================================
+   CONTENIDO DE LA TARJETA
+   ======================================================= */
 .card-content {
     padding: 15px;
+    background: linear-gradient(
+        to top,
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.4),
+        transparent
+    );
 }
+
+/* Texto interno */
+.card-content h3 {
+    color: #5eead4; /* turquesa */
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+
+.card-content p {
+    color: #cbd5f5;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
