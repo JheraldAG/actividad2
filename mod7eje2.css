@@ -2,51 +2,48 @@
    1. DEFINICIÓN DE VARIABLES GLOBALES (:root)
    ========================================= */
 :root {
-    /* Colores Primitivos: Definimos la paleta base */
+    /* Colores base */
     --color-white: #ffffff;
-    --color-gray-50: #f9f9f9;
-    --color-gray-100: #e0e0e0;
-    --color-gray-500: #666666;
-    --color-gray-800: #333333;
-    --color-dark-bg: #1e1e1e;
-    --color-dark-card: #2d2d2d;
-    --color-blue: #0056b3;
+    --color-light-bg: #f4f1ff;
+    --color-gray-100: #e5e1f5;
+    --color-gray-500: #6b7280;
+    --color-gray-800: #2e2a47;
 
-    /* VARIABLES SEMÁNTICAS (El secreto del sistema)
-       En lugar de usar colores directos, usamos nombres que describen su función.
-       Esto permite cambiarlos fácilmente. */
-    
-    --bg-body: var(--color-gray-50);       /* Fondo de la página */
-    --bg-card: var(--color-white);         /* Fondo de la tarjeta */
-    --text-primary: var(--color-gray-800); /* Título y nombres */
-    --text-secondary: var(--color-gray-500); /* Textos secundarios */
-    --btn-border: var(--color-blue);       /* Bordes de botones */
-    --btn-text: var(--color-blue);         /* Texto de botones */
-    --shadow-color: rgba(0, 0, 0, 0.1);    /* Sombra suave */
+    --color-dark-bg: #120f1f;
+    --color-dark-card: #1f1b33;
+
+    --color-primary: #6d5dfc; /* morado */
+    --color-accent: #ff7a59;  /* coral */
+
+    /* Variables semánticas */
+    --bg-body: var(--color-light-bg);
+    --bg-card: var(--color-white);
+    --text-primary: var(--color-gray-800);
+    --text-secondary: var(--color-gray-500);
+    --btn-border: var(--color-primary);
+    --btn-text: var(--color-primary);
+    --shadow-color: rgba(109, 93, 252, 0.15);
 }
+
 
 /* =========================================
    2. EL TEMA OSCURO (Sobrescritura)
    ========================================= */
 /* Selector de atributo: Busca cuando el HTML tiene data-theme="dark" */
 [data-theme="dark"] {
-    /* Aquí REASIGNAMOS las variables semánticas. 
-       No tocamos el CSS de la tarjeta, solo cambiamos a qué color apuntan las variables. */
-    
-    --bg-body: #121212; 
+    --bg-body: var(--color-dark-bg);
     --bg-card: var(--color-dark-card);
-    --text-primary: var(--color-white);
-    --text-secondary: #aaaaaa;
-    --shadow-color: rgba(0, 0, 0, 0.5); /* Sombra más fuerte en oscuro */
-    --btn-border: #90caf9; /* Azul más claro para mejor contraste en oscuro */
-    --btn-text: #90caf9;
+    --text-primary: #ffffff;
+    --text-secondary: #b9b5d3;
+    --btn-border: var(--color-accent);
+    --btn-text: var(--color-accent);
+    --shadow-color: rgba(0, 0, 0, 0.6);
 }
-
 /* =========================================
    3. ESTILOS GENERALES (Consumiendo variables)
    ========================================= */
 body {
-    background-color: var(--bg-body); /* Consume la variable dinámica */
+    background-color: var(--bg-body);
     color: var(--text-primary);
     font-family: 'Segoe UI', sans-serif;
     display: flex;
@@ -55,16 +52,15 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    /* Transición suave para todo el body al cambiar de tema */
-    transition: background-color 0.3s ease, color 0.3s ease; 
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Estilos de la Tarjeta */
 .card {
-    background-color: var(--bg-card); /* ¡Aquí está la magia! Cambia solo según el tema */
+    background-color: var(--bg-card);
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px var(--shadow-color);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px var(--shadow-color);
     text-align: center;
     width: 300px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -75,7 +71,7 @@ body {
     height: 100px;
     border-radius: 50%;
     margin-bottom: 1rem;
-    background-color: #ccc;
+    background-color: var(--color-gray-100);
 }
 
 h2 { margin: 0; font-size: 1.5rem; }
@@ -115,8 +111,9 @@ h2 { margin: 0; font-size: 1.5rem; }
 
 .btn:hover {
     background-color: var(--btn-border);
-    color: var(--bg-card); /* Invertimos colores al hacer hover */
+    color: var(--bg-card);
 }
+
 
 /* =========================================
    4. ESTILO DEL INTERRUPTOR (Toggle)
@@ -138,7 +135,7 @@ h2 { margin: 0; font-size: 1.5rem; }
 .theme-switch input { display: none; }
 
 .slider {
-    background-color: #ccc;
+    background-color: #d1cfff;
     bottom: 0;
     cursor: pointer;
     left: 0;
@@ -150,7 +147,7 @@ h2 { margin: 0; font-size: 1.5rem; }
 }
 
 .slider:before {
-    background-color: #fff;
+    background-color: #ffffff;
     bottom: 4px;
     content: "";
     height: 26px;
@@ -161,5 +158,5 @@ h2 { margin: 0; font-size: 1.5rem; }
     border-radius: 50%;
 }
 
-input:checked + .slider { background-color: #0056b3; }
+input:checked + .slider { background-color: var(--color-accent); }
 input:checked + .slider:before { transform: translateX(26px); }
